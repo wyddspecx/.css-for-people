@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Project Era</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <meta name="description" content="Donate to Your Project Name ." />
+</head>
+<body>
+  <div class="bg-anim" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#">
+        <img src="logo.png" alt="Project Name Here" class="logo" width="36" height="36">
+        <span class="brand-text">Project Name Here</span>
+      </a>
+      <nav class="nav">
+        <button class="btn btn-ghost" id="discordBtn">Connect Discord</button>
+        <a class="btn btn-outline" href="#packs">Packs</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1>Project Your Name Here</h1>
+          <p class="lead">Donate and Support Your Project!</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#packs">See Packs</a>
+            <button class="btn btn-soft" id="howItWorks">How it works
+          </div>
+          <div class="trust">
+            <span class="pill"
+            <span class="pill"
+            <span class="muted">Easy Proccess!</span>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <div class="status">
+            <div class="status-top">
+              <div>
+                <div class="label">Project Name Here</div>
+                <div class="value">Fixing</div>
+              </div>
+              <div>
+                <div class="label">Discord</div>
+                <div class="value">Fixing</div>
+              </div>
+            </div>
+            <div class="progress-wrap">
+              <div class="progress" style="width:40%"></div>
+            </div>
+            <div class="muted small">Donations help the servers.</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="packs" class="packs container">
+      <h2 class="section-title">Donation Packs</h2>
+      <p class="section-sub">Choose a pack below.</p>
+
+      <div class="cards">
+        <article class="card">
+          <div class="card-head">
+            <h3>Starter Pack</h3>
+            <p class="muted">Starter Pack</p>
+          </div>
+          <div class="card-body">
+            <ul class="features">
+              <li>Donor chat access</li>
+              <li>Starter Pack Role</li>
+              <li>Soft queue priority</li>
+            </ul>
+            <div class="price">$5</div>
+            <a class="btn btn-outline wide donate" data-pack="Starter" href="https://github.com/wyddspecx" target="_blank" rel="noopener">Donate Your Price Here</a>
+          </div>
+        </article>
+
+        <article class="card featured">
+          <div class="ribbon">Popular</div>
+          <div class="card-head">
+            <h3>Founder Pack</h3>
+            <p class="muted">Full supporter</p>
+          </div>
+          <div class="card-body">
+            <ul class="features">
+              <li>All Starter benefits</li>
+              <li>Founder badge &amp; exclusive role</li>
+              <li>Early event access, Name Changes</li>
+            </ul>
+            <div class="price">Your Price Here</div>
+            <a class="btn btn-primary wide donate" data-pack="Name Role Here" href="https://github.com/wyddspecx" target="_blank" rel="noopener">Donate Your Price Here</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-head">
+            <h3>Custom</h3>
+            <p class="muted">Choose your Donation Amount</p>
+          </div>
+          <div class="card-body">
+            <div class="price">—</div>
+            <a class="btn btn-ghost wide donate" data-pack="Custom"</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="discord-info container">
+      <div class="grid">
+        <div class="card small">
+          <h4>Discord Connect</h4>
+          <p class="muted">Click "Connect Discord" Broken Cba.</p>
+        </div>
+        <div class="card small">
+          <h4>What we provide</h4>
+          <p class="muted">Type anything you want here!.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>© Project Your Name Here</div>
+        <div class="muted">For OGFN.
+      </div>
+    </footer>
+  </main>
+
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-panel">
+      <button class="close" id="closeModal">&times;</button>
+      <h3>In progress</h3>
+      <ol>
+        <li></li>
+        <li>).</li>
+        <li>.</li>
+        <li>.</li>
+      </ol>
+      <p class="muted small">In Progress, Bugged.</p>
+    </div>
+  </div>
+
+  <script>
+    
+    const discordBtn = document.getElementById('discordBtn');
+    const modal = document.getElementById('modal');
+    const closeModal = document.getElementById('closeModal');
+    const howItWorks = document.getElementById('howItWorks');
+
+    discordBtn.addEventListener('click', () => {
+      // UI flow: toggle visual "connected" state. Replace with real OAuth redirect.
+      if (!discordBtn.classList.contains('connected')) {
+        // simulate redirect to OAuth: Bugged
+        alert('This is a Test. Bugged.');
+        discordBtn.classList.add('connected');
+        discordBtn.textContent = 'Discord Connected';
+      } else {
+        discordBtn.classList.remove('connected');
+        discordBtn.textContent = 'Connect Discord';
+      }
+    });
+
+
+    document.querySelectorAll('.donate').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        // optional: before redirect, store a client-side marker that backend can match (e.g., localStorage)
+        // Note: For secure verification, implement server-side order verification and link to Discord user via webhook
+        try {
+          const pack = btn.getAttribute('data-pack') || 'Purchase';
+          localStorage.setItem('pe_last_pack', JSON.stringify({ pack, ts: Date.now() }));
+        } catch (err) { /* ignore */ }
+        // actual redirect uses target="_blank" to open Square; no further action here
+      });
+    });
+
+
+    howItWorks.addEventListener('click', () => {
+      modal.setAttribute('aria-hidden', 'false');
+    });
+    closeModal.addEventListener('click', () => modal.setAttribute('aria-hidden', 'true'));
+
+   
+    const reveal = () => {
+      document.querySelectorAll('.card, .hero-card, .packs .card').forEach(el => {
+        const r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight - 80) el.classList.add('in');
+      });
+    };
+    window.addEventListener('scroll', reveal);
+    window.addEventListener('load', reveal);
+  </script>
+</body>
+</html>
